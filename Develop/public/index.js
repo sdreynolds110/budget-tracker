@@ -151,3 +151,11 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    fetch("/api/transaction/all").then(response => {
+      return response.json();
+    });
+  }, 3000);
+});
